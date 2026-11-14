@@ -4,15 +4,18 @@
 
 <br />
 
-<p align="center">
+<div align="center">
   <a href="https://github.com/Ahmed-sherifhe1/nasa-space-apps-challenge-2026-frontend">
-    <img src="docs/screenshots/landing-page.png" alt="DELTA 2100 Landing Page" width="620"/>
+    <img src="docs/screenshots/landing-page.png" alt="DELTA 2100 — The Last Line of Defense" width="680"/>
   </a>
-</p>
+  <p style="margin-top:12px; font-size:14px; color:#9AAAC0;">
+    Climate-risk intelligence platform · Dark navy interface · Satellite Cyan accents
+  </p>
+</div>
 
-##
+<br />
 
-## Project Overview
+## Product Overview
 
 **DELTA 2100** is a climate-risk intelligence platform that visualizes the historical record, present-day threats, and future projections of water-related environmental change. The platform makes three distinct experiences accessible through a unified interface:
 
@@ -43,13 +46,16 @@ All visualizations are grounded in actual data and clearly distinguish between o
 
 <div align="center">
   <a href="https://github.com/Ahmed-sherifhe1/nasa-space-apps-challenge-2026-frontend/tree/main/docs/screenshots">
-    <img src="docs/screenshots/the-past-archive.png" alt="THE PAST Archive — DELTA 2100" width="620"/>
+    <img src="docs/screenshots/the-past-archive.png" alt="THE PAST Archive — DELTA 2100" width="640"/>
   </a>
+  <p style="margin-top:8px; font-size:13px; color:#9AAAC0;">
+    Archive grid with case study cards, search & filter, before/after comparison, status badges
+  </p>
 </div>
 
 <br />
 
-THE PAST is a documented archive of five locations where the coast has moved, the land has sunk, or the water has disappeared. Each case study combines historical record, narrative storytelling, and visual comparison to communicate how water-related events have transformed communities and landscapes.
+THE PAST is a documented archive of locations where the coast has moved, the land has sunk, or the water has disappeared. Each case study combines historical record, narrative storytelling, and visual comparison to communicate how water-related events have transformed communities and landscapes.
 
 ### Implemented Features
 
@@ -68,7 +74,7 @@ All eleven case studies in THE PAST are marked as `isDemo: true`. The platform c
 - **Illustrative reconstruction** — Before/after image pairs noted as unreported comparisons
 - **Narrative storytelling** — First-person accounts and descriptive text
 
-Case studies covered:
+### Case Studies Covered
 
 | Case Study | Region | Threat Category | Status |
 |------------|--------|-----------------|--------|
@@ -90,8 +96,11 @@ Case studies covered:
 
 <div align="center">
   <a href="https://github.com/Ahmed-sherifhe1/nasa-space-apps-challenge-2026-frontend/tree/main/docs/screenshots">
-    <img src="docs/screenshots/risk-intelligence.png" alt="RISK INTELLIGENCE — DELTA 2100" width="620"/>
+    <img src="docs/screenshots/risk-intelligence.png" alt="RISK INTELLIGENCE — DELTA 2100" width="640"/>
   </a>
+  <p style="margin-top:8px; font-size:13px; color:#9AAAC0;">
+    Interactive orthographic globe with five regions, scenario comparisons, and indicator cards
+  </p>
 </div>
 
 <br />
@@ -132,8 +141,11 @@ All region data is marked `isDemo: true`. The platform distinguishes:
 
 <div align="center">
   <a href="https://github.com/Ahmed-sherifhe1/nasa-space-apps-challenge-2026-frontend/tree/main/docs/screenshots">
-    <img src="docs/screenshots/last-100-years.png" alt="LAST 100 YEARS — DELTA 2100" width="620"/>
+    <img src="docs/screenshots/last-100-years.png" alt="LAST 100 YEARS — DELTA 2100" width="640"/>
   </a>
+  <p style="margin-top:8px; font-size:13px; color:#9AAAC0;">
+    Simulation interface with budget allocation, four adaptation strategies, and consequence display
+  </p>
 </div>
 
 <br />
@@ -171,22 +183,6 @@ LAST 100 YEARS is an educational climate-adaptation simulation. Players allocate
 
 <br />
 
-## Screenshots Gallery
-
-| ![Landing Page](docs/screenshots/landing-page.png) | ![THE PAST Archive](docs/screenshots/the-past-archive.png) |
-|:---:|:---:|
-| *Landing Page — DELTA 2100* | *THE PAST Archive* |
-
-| ![RISK INTELLIGENCE](docs/screenshots/risk-intelligence.png) | ![LAST 100 YEARS](docs/screenshots/last-100-years.png) |
-|:---:|:---:|
-| *Risk Intelligence — Interactive Globe* | *LAST 100 YEARS — Simulation Interface* |
-
-| ![About Page](docs/screenshots/about-page.png) | ![Regional Risk Detail](docs/screenshots/regional-risk-detail.png) |
-|:---:|:---:|
-| *About & Methodology* | *Nile Delta — Regional Risk* |
-
-<br />
-
 ## Technology Stack
 
 The project is built as a **Next.js 16** application with the App Router, using modern web technologies:
@@ -221,7 +217,7 @@ The project is built as a **Next.js 16** application with the App Router, using 
 
 ## Architecture Overview
 
-The application is structured using Next.js 113's App Router with a clear separation between marketing pages and the main application modules.
+The application is structured using Next.js 16's App Router with a clear separation between marketing pages and the main application modules.
 
 ```
 src/
@@ -265,7 +261,7 @@ src/
 ### Module Separation
 
 - **Marketing website** (`/app/(marketing)/`) — Public-facing homepage, about page, and module introduction
-- **Main application** (`/app/app/`) — Authenticated/dashboard access to the three core modules
+- **Main application** (`/app/app/`) — Dashboard access to the three core modules
 - **Shared components** (`/components/ui/`) — Buttons, section headings, reveal animations
 - **Module-specific components** — Isolated within each feature directory
 
@@ -420,14 +416,6 @@ Based on the existing codebase structure and implementation gaps, the following 
 
 <br />
 
-## Team and Credits
-
-The DELTA 2100 frontend was developed as a climate-risk intelligence visualization platform. Specific contributor information is available in the GitHub repository git history.
-
-Special thanks to the designers and developers who contributed to the visual identity, data visualization, and user experience design.
-
-<br />
-
 ## License
 
 MIT License. See the [LICENSE](LICENSE) file for full terms.
@@ -436,33 +424,7 @@ MIT License. See the [LICENSE](LICENSE) file for full terms.
 
 <br />
 
-## Table of Contents
-
-```mermaid
-flowchart TB
-    subgraph DELTA2100
-        MC[Marketing Website]
-        PAST[THE PAST Module]
-        RISK[RISK INTELLIGENCE Module]
-        LAST[LAST 100 Years Module]
-        UI[Shared UI Components]
-    end
-
-    User((User)) --> MC
-    User --> PAST
-    User --> RISK
-    User --> LAST
-    UI --> PAST
-    UI --> RISK
-    UI --> LAST
-
-    style DELTA2100 fill:#081020,stroke:#00B8D9,stroke-width:2px
-    style User fill:#F8FAFC,stroke:#9AAAC0,stroke-width:1px
-```
-
-<br />
-
----
+***
 
 *DELTA 2100 — The Last Line of Defense*<br />
 *Making climate-risk intelligence accessible, transparent, and visually grounded.*
