@@ -1,0 +1,260 @@
+@import "tailwindcss";
+
+@theme {
+  --color-navy: #081020;
+  --color-intelligence: #101b35;
+  --color-panel: #172b4d;
+  --color-cyan: #00b8d9;
+  --color-amber: #f59e0b;
+  --color-coral: #ef4444;
+  --color-cloud: #f8fafc;
+  --color-muted: #9aaac0;
+  --color-line: #263b58;
+  --color-low: #35b86b;
+  --color-moderate: #f5c542;
+  --color-high: #f97316;
+  --color-critical: #ef4444;
+  --color-critical-soft: #ff8a8a;
+
+  --font-display: var(--font-space-grotesk), "Space Grotesk", sans-serif;
+  --font-sans: var(--font-inter), "Inter", sans-serif;
+  --font-mono: var(--font-ibm-plex-mono), "IBM Plex Mono", monospace;
+
+  --radius-control: 8px;
+  --radius-card: 12px;
+  --radius-panel: 20px;
+
+  --shadow-panel: 0 24px 80px rgba(0, 0, 0, 0.32);
+  --shadow-glow: 0 0 40px rgba(0, 184, 217, 0.12);
+}
+
+:root {
+  color-scheme: dark;
+  --page-grid: rgba(154, 170, 192, 0.06);
+}
+
+* {
+  border-color: var(--color-line);
+}
+
+html {
+  scroll-behavior: smooth;
+  background: var(--color-navy);
+}
+
+body {
+  min-height: 100vh;
+  background: var(--color-navy);
+  color: var(--color-cloud);
+  font-family: var(--font-sans);
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: rgba(0, 184, 217, 0.28);
+  color: #fff;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-cyan);
+  outline-offset: 3px;
+}
+
+button,
+a,
+input {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button:not(:disabled),
+[role="button"]:not([aria-disabled="true"]) {
+  cursor: pointer;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-navy);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #263b58;
+  border-radius: 999px;
+  border: 2px solid var(--color-navy);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #38577d;
+}
+
+@utility shell {
+  width: 100%;
+  max-width: 1440px;
+  margin-inline: auto;
+  padding-inline: 1.25rem;
+}
+
+@media (min-width: 768px) {
+  .shell {
+    padding-inline: 2rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .shell {
+    padding-inline: 2.5rem;
+  }
+}
+
+@utility eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--color-cyan);
+}
+
+@utility mono-label {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  line-height: 1.4;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+}
+
+@utility display-title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  line-height: 0.94;
+  letter-spacing: -0.045em;
+  text-wrap: balance;
+}
+
+@utility panel-surface {
+  border: 1px solid var(--color-line);
+  background:
+    linear-gradient(180deg, rgba(23, 43, 77, 0.92), rgba(16, 27, 53, 0.82));
+  border-radius: var(--radius-card);
+}
+
+@utility hairline {
+  border: 1px solid var(--color-line);
+}
+
+@utility grid-lines {
+  background-image:
+    linear-gradient(to right, var(--page-grid) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--page-grid) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+@utility dotted-field {
+  background-image: radial-gradient(rgba(154, 170, 192, 0.22) 0.75px, transparent 0.75px);
+  background-size: 18px 18px;
+}
+
+@utility text-balance {
+  text-wrap: balance;
+}
+
+@utility text-pretty {
+  text-wrap: pretty;
+}
+
+@utility no-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+@utility fade-bottom {
+  mask-image: linear-gradient(to bottom, black 55%, transparent 100%);
+}
+
+@utility glass-toolbar {
+  background: rgba(8, 16, 32, 0.76);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+.contour-lines {
+  background-image: url("data:image/svg+xml,%3Csvg width='560' height='560' viewBox='0 0 560 560' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg stroke='%239AAAC0' stroke-opacity='.11' stroke-width='1'%3E%3Cpath d='M-20 120C60 60 114 166 192 146C270 126 282 40 362 38C442 36 476 128 580 114'/%3E%3Cpath d='M-20 154C66 90 122 200 202 178C282 156 296 70 376 68C456 66 486 156 580 144'/%3E%3Cpath d='M-20 190C74 124 132 234 214 210C296 186 310 100 390 98C470 96 496 184 580 176'/%3E%3Cpath d='M-20 228C82 162 144 268 228 242C312 216 324 132 404 130C484 128 506 212 580 208'/%3E%3Cpath d='M-20 270C92 202 158 302 244 274C330 246 340 166 420 164C500 162 516 240 580 244'/%3E%3Cpath d='M-20 316C104 246 172 338 260 308C348 278 356 202 436 200C516 198 526 270 580 284'/%3E%3Cpath d='M-20 366C116 296 188 376 278 344C368 312 372 240 452 238C532 236 536 302 580 328'/%3E%3Cpath d='M-20 420C128 352 204 414 296 382C388 350 388 282 468 280C548 278 546 336 580 376'/%3E%3C/g%3E%3C/svg%3E");
+  background-size: 560px 560px;
+}
+
+.radar-rings {
+  background:
+    radial-gradient(circle at center, transparent 0 19%, rgba(0, 184, 217, 0.1) 19.2% 19.4%, transparent 19.6% 36%, rgba(0, 184, 217, 0.08) 36.2% 36.4%, transparent 36.6% 54%, rgba(0, 184, 217, 0.06) 54.2% 54.4%, transparent 54.6%);
+}
+
+.waterline {
+  background: linear-gradient(180deg, rgba(0, 184, 217, 0) 0%, rgba(0, 184, 217, 0.16) 50%, rgba(0, 184, 217, 0.03) 100%);
+}
+
+.risk-amber {
+  color: #f59e0b;
+}
+
+@keyframes drift {
+  0%, 100% { transform: translate3d(0, 0, 0); }
+  50% { transform: translate3d(0, -8px, 0); }
+}
+
+@keyframes scan {
+  0% { transform: translateY(-100%); opacity: 0; }
+  15% { opacity: 0.4; }
+  85% { opacity: 0.4; }
+  100% { transform: translateY(900%); opacity: 0; }
+}
+
+@keyframes pulse-ring {
+  0% { transform: scale(0.75); opacity: 0.55; }
+  80%, 100% { transform: scale(2.2); opacity: 0; }
+}
+
+@keyframes ticker {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-drift {
+  animation: drift 7s ease-in-out infinite;
+}
+
+.animate-scan {
+  animation: scan 8s linear infinite;
+}
+
+.animate-pulse-ring {
+  animation: pulse-ring 3.2s cubic-bezier(0.2, 0.6, 0.3, 1) infinite;
+}
+
+.animate-ticker {
+  animation: ticker 32s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
