@@ -81,6 +81,7 @@ export default async function PastPage() {
               <Image
                 src={featured.heroImage}
                 alt={featured.impactImageAlt}
+                unoptimized
                 fill
                 priority
                 loading="eager"

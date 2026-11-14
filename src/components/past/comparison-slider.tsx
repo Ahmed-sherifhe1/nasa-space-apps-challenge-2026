@@ -32,6 +32,7 @@ export function ComparisonSlider({
         <Image
           src={after.src}
           alt={after.alt}
+          unoptimized
           fill
           priority
           loading="eager"
@@ -45,6 +46,7 @@ export function ComparisonSlider({
           <Image
             src={before.src}
             alt={before.alt}
+            unoptimized
             fill
             sizes="(max-width: 1024px) 100vw, 70vw"
             className={cn("object-cover", illustrative && "saturate-[0.65]")}

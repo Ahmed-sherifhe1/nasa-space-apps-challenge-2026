@@ -276,6 +276,7 @@ export default async function CaseStudyPage({ params }: CasePageProps) {
                   <Image
                     src={study.impactImage}
                     alt={study.impactImageAlt}
+                    unoptimized
                     fill
                     sizes="(max-width: 1024px) 100vw, 70vw"
                     className="object-cover"
